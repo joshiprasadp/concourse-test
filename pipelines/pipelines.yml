@@ -1,6 +1,6 @@
 ---
 resources:
-- name: source-code
+- name: git-master
   type: git
   source:
     uri: https://github.com/joshiprasadp/concourse-test.git
@@ -10,11 +10,11 @@ jobs:
   - name: build-master
     plan:
 
-    - get: source-code
-      trigger: true
+    - get: source
+      resource: git-master
 
     - set_pipeline: self-update
-      file: source-code/pipelines/pipelines.yml
+      file: source/pipelines/pipelines.yml
 
     - task: first-task
       config: 
