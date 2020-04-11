@@ -9,12 +9,11 @@ resources:
 jobs:
   - name: build-master
     plan:
-    
+
     - get: source-code
-      resource: git-master
       trigger: true
 
-    - set-pipeline: self-update
+    - set_pipeline: self-update
       file: source-code/pipelines.yml
 
     - task: first-task
