@@ -14,7 +14,7 @@ jobs:
       trigger: true
 
     - set_pipeline: self-update
-      file: source-code/pipelines.yml
+      file: source-code/pipelines/pipelines.yml
 
     - task: first-task
       config: 
