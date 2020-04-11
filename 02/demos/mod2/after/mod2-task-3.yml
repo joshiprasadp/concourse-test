@@ -1,0 +1,22 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source: {repository: ubuntu}
+
+inputs:
+- name: resources
+  path: input-resources
+
+outputs:
+- name: output-folder
+
+run:
+  path: bash 
+  args:
+  - -exec
+  - |
+    chmod +x ./input-resources/script1.sh
+
+    ./input-resources/script1.sh
+# fly -t ps execute -c mod2-task-3.yml -i resources=./resources
