@@ -12,7 +12,7 @@ jobs:
 
     - get: source
       resource: git-master
-      triggers: true
+      trigger: true
 
     - set_pipeline: self-update
       file: source/pipelines/pipelines.yml
